@@ -51,9 +51,7 @@ public class Point {
      */
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Point)) return false;
-        Point point = (Point) other;
-        return x == point.x & y == point.y;
+        return other instanceof Point point &&  (x == point.x & y == point.y);
     }
 
     public String toString() {
