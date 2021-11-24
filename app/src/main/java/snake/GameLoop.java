@@ -18,7 +18,7 @@ public class GameLoop implements Runnable {
         interval = 1000.0f / frameRate;
         running = true;
         paused = false;
-        keyIsPressed = false;
+        setKeyReleased();
     }
 
     @Override
@@ -27,7 +27,6 @@ public class GameLoop implements Runnable {
             // Time the update and paint calls
             float time = System.currentTimeMillis();
 
-            keyIsPressed = false;
             grid.update();
             Painter.paint(grid, context);
 
@@ -47,6 +46,14 @@ public class GameLoop implements Runnable {
                 }
             }
         }
+    }
+
+    public void setKeyPressed() {
+        keyIsPressed = true;
+    }
+
+    public void setKeyReleased() {
+        keyIsPressed = false;
     }
 
     public boolean isKeyPressed() {

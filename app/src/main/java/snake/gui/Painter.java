@@ -2,10 +2,7 @@ package snake.gui;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import snake.Food;
-import snake.Grid;
-import snake.Point;
-import snake.Snake;
+import snake.*;
 
 import static snake.Grid.SIZE;
 
@@ -16,6 +13,7 @@ public class Painter {
         paintFood(gc, grid.getFood());
         paintSnake(gc, grid.getSnake());
         paintScore(gc, grid.getSnake().getPoints().size());
+        Main.getLoop().setKeyReleased();
     }
 
     public static void paintResetMessage(GraphicsContext gc) {
